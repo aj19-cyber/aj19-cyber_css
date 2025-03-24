@@ -1,0 +1,170 @@
+/* Basic Table Styling */
+th, td { 
+    border: 1px solid rgb(44, 43, 43);
+    background-color: rgb(173, 191, 230);
+    text-align: center;
+    width: 30px;
+}
+
+h3 {
+    text-align: center;
+    margin-left:160px;
+}
+
+table {
+    margin-left:300px;
+    margin-right:auto;
+    border-collapse: collapse;
+    width: 80%; /* Ensures the table takes up full width and is responsive */
+}
+/* Header */
+header {
+    background-color: plum;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+    border-bottom: 2px solid;
+    margin-left:150px
+}
+
+/* Body */
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: powderblue;
+    width: 100%;
+    text-align: center;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 200px;
+    background-color: lightcoral;
+    padding: 20px;
+    position:fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+}
+
+.sidebar a {
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar a:hover {
+    background-color: lightsalmon;
+}
+
+/* Main content area with Flexbox or Grid */
+main {
+    margin-left: 350px;
+    padding-left: 150px;
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Grid with dynamic sizing for content */
+    gap: 20px;
+}
+
+/* Section Style */
+section {
+    padding: 40px;
+    margin: 20px 0;
+    background-color: lightgray;
+    border-radius: 8px;
+}
+
+/* Multicolumn text content */
+section.text-content {
+    column-count: 2;
+    column-gap: 20px;
+}
+
+section.text-content p {
+    text-align: justify;
+}
+
+/* Image container */
+.image-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap; /* Ensures images wrap to next line on smaller screens */
+}
+
+/* Style for individual images inside the image container */
+.image-container img {
+    width: 250px;
+    height: 300px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Float Image: Apply float behavior only to the specified image */
+.image-container .float-image {
+    float: left; /* Float this image to the left */
+    margin-right: 20px; /* Space between image and text */
+    width: 250px;
+    height: 300px;
+    border-radius: 10px;
+}
+
+/* Clear float to prevent layout issues */
+.clear {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Footer - Smaller size */
+footer {
+    padding: 5px; /* Reduced padding */
+    margin: 10px 0; /* Reduced margin */
+    text-decoration: solid;
+    margin-left: 200px;
+}
+
+/* Creation Section */
+.creation {
+    background-color: thistle;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    /* Adjust layout for smaller screens */
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    main {
+        margin-left: 0;
+    }
+
+    .image-container {
+        flex-direction: column; /* Stack images vertically on smaller screens */
+        align-items: center; /* Center images vertically */
+    }
+
+    .image-container img {
+        width: 80%; /* Resize images for mobile */
+        height: auto; /* Let the height adjust automatically */
+    }
+
+    /* Table layout */
+    table {
+        width: 100%; /* Ensure the table fits on smaller screens */
+    }
+
+    /* Footer */
+    footer {
+        padding: 5px;
+        margin: 5px 0;
+    }
+}
